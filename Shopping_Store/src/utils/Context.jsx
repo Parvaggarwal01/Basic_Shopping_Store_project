@@ -16,7 +16,7 @@ function Context(props) {
   //     console.log(error);
   //   }
   // };
-  // console.log(products);
+  console.log(products);
   
 
   // useEffect(() => {

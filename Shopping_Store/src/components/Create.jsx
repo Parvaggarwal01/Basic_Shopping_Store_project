@@ -10,7 +10,7 @@ function Create() {
   const [image, setimage] = useState("");
   const [category, setcategory] = useState("");
   const [price, setprice] = useState("");
-  const [discription, setdescription] = useState("");
+  const [description, setdescription] = useState("");
 
   const AddProductHandler = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ function Create() {
       image.trim().length < 5 ||
       category.trim().length < 5 ||
       price.trim().length < 1 ||
-      discription.trim().length < 5
+      description.trim().length < 5
     ) {
       alert("Each and Every input must have atleast 4 characters");
       return;
@@ -32,7 +32,7 @@ function Create() {
       image,
       category,
       price,
-      discription,
+      description,
     };
     setProducts([...products, product]);
     localStorage.setItem("products", JSON.stringify([...products, product]));
@@ -80,7 +80,7 @@ function Create() {
         className="text-1xl bg-zinc-100 rounded p-3 w-1/2 mb-3 border border-zinc-300"
         rows="10"
         onChange={(e) => setdescription(e.target.value)}
-        value={discription}
+        value={description}
       ></textarea>
       <div className="w-1/2">
         <button className=" py-3 px-5 border rounded border-blue-200 text-blue-300">
