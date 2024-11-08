@@ -24,7 +24,12 @@ function Home() {
 
   useEffect(() => {
     if (!filteredProducts || category == "undefined") setFilteredProducts(products);
-    else if (category != "undefined") getProductsCategory();
+    else if (category != "undefined") {
+
+
+      setFilteredProducts(products.filter((p)=> p.category == category));
+    
+    };
   }, [category, products]);
 
   // console.log(setFilteredProducts);

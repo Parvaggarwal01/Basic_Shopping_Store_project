@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Details from "./components/Details";
+import Create from "./components/Create";
 
 function App() {
   const { search, pathname } = useLocation();
@@ -10,13 +11,14 @@ function App() {
   return (
     <div className="h-screen w-screen flex">
       {(pathname != "/" || search.length > 0) && (
-        <Link to="/" className="py-3 px-5 border rounded border-red-500 text-red-500 absolute left-[4.5%] top-[43%]">
+        <Link to="/" className="py- px-5 border rounded border-red-500 text-red-500 absolute left-[4.5%] top-[80%]">
           Home
         </Link>
       )}
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/create" element={<Create />} />
         <Route path="/details/:id" element={<Details />} />
       </Routes>
     </div>
